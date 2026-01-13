@@ -1,0 +1,15 @@
+n = int(input())
+students = []
+for i in range(n):
+    name = input()
+    marks = float(input())
+    students.append([name, marks])
+lowest = min(marks for name, marks in students)
+second_lowest = min(marks for name, marks in students if marks != lowest)
+result = []
+for name, marks in students:
+    if marks == second_lowest:
+        result.append(name)
+result.sort()
+for name in result:
+    print(name)
